@@ -14,11 +14,12 @@ async function getResponse(){
         // Create a list of the currencies
         const ul = document.createElement('ul');
         // Iterate the data and create a list item for each currency
-        data.forEach(rate => {
+        // Use Promise.all to wait for all promises to be finalized.
+        await Promise.all(data.map(async (rate) => {
             const li = document.createElement('li');
-            li.textContent = `${rate.shortName} - ${rate.currMid}`;
+            li.textContent = `${rate.shortName} - ${rate.valMid}`;
             ul.appendChild(li);
-        });
+        }));
 
         // Append the currencies to the DOM
         exchengeRatesElement.innerHTML = '';
