@@ -1,7 +1,7 @@
 package cz.vladyslavarseniuk.test.test1pf.repository;
 
-import org.springframework.stereotype.Repository;
+import cz.vladyslavarseniuk.test.test1pf.entity.RateCard;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public class RateCardRepository {
+public interface RateCardRepository extends JpaRepository<RateCard, Long>{
 }
