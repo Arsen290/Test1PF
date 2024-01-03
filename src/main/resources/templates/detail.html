@@ -8,7 +8,10 @@
 <body>
 <h1>Exchange Rate Detail</h1>
 
-<div th:if="${shortName}" th:data-shortname="${shortName}">
+<div th:if="${shortName}" th:text="${shortName}"></div>
+
+</div>
+<div th:if="${shortName}" th:value="${shortName}" id="detailsRate">
 
 </div>
 

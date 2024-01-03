@@ -1,8 +1,11 @@
-// Find element by attribute
-var myElement = document.querySelector('[th:data-shortname]');
+// Find the element by its ID
+var myElement = document.getElementById('detailsRate');
 
-// Get the value of the attribute
-var shortnameValue = myElement.getAttribute('th:data-shortname');
-
-console.log('Value of parametr th:data-shortname:', shortnameValue);
-// Set the value of the attribute
+// Check if the element is found
+if (myElement) {
+    // Get the value of the 'th:value' attribute
+    var shortnameValue = myElement.getAttribute('value');
+    console.log('Value attr th:value:', shortnameValue);
+} else {
+    console.log('Element not found.');
+}

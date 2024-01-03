@@ -3,6 +3,7 @@ package cz.vladyslavarseniuk.test.test1pf.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.ui.Model;
 
@@ -17,7 +18,7 @@ public class ViewController {
     }
 
     @GetMapping("/detail/{shortName}")
-    public String showExchangeRateDetail(@RequestParam String shortName,Model model) {
+    public String showExchangeRateDetail(@PathVariable String shortName, Model model) {
         model.addAttribute("shortName", shortName);
         return "detail";
     }
