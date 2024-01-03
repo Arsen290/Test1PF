@@ -16,8 +16,9 @@ public class ViewController {
         return "index";
     }
 
-    @GetMapping("/detail")
-    public String showExchangeRateDetail() {
+    @GetMapping("/detail/{shortName}")
+    public String showExchangeRateDetail(@RequestParam String shortName,Model model) {
+        model.addAttribute("shortName", shortName);
         return "detail";
     }
 }
