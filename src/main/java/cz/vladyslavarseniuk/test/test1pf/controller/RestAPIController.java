@@ -1,11 +1,10 @@
 package cz.vladyslavarseniuk.test.test1pf.controller;
 
 import cz.vladyslavarseniuk.test.test1pf.entity.RateCard;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import cz.vladyslavarseniuk.test.test1pf.service.RateCardService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -14,9 +13,12 @@ import java.util.List;
 @RequestMapping("/api/v1")
 public class RestAPIController {
 
-    @GetMapping("/")
-    public List<RateCard> getAllRatesCard() {
-        return RatesCardService.getAllRatesCard();// ? Maybe i use only repository
+    @Autowired
+    private RateCardService rateCardService;
+
+    @GetMapping("/ratecards")
+    public List<RateCard> getRateCards(@RequestParam boolean useDb) {
+        return rateCardService.getRateCards(useDb);
     }
 
 }
