@@ -21,6 +21,22 @@ git clone https://github.com/Arsen290/Test1PF.git
 
 ### Step 2: Build the Project
 <p>Navigate to the project directory and build it using Maven:</p>
+React
+
+Navigate to the React project directory:
+```
+cd Test1PF\my-react-app
+```
+Install dependencies:
+
+```
+npm install
+```
+Build the project:
+```
+npm run build
+```
+After running this command, you will find the compiled files in the build directory.
 
 Open the directory
 ```
@@ -31,6 +47,8 @@ Mvn install
 ```
 mvn clean install 
 ```
+Install Node.js if not already installed.
+Ensure Maven is installed.
 
 ### Step 3: Set Up the Database
 
@@ -75,8 +93,12 @@ In the frontend (FE), Thymeleaf was used with an assistant controller method. Th
 
 In the backend (BE), a REST API project was created.
 
-In the frontend with React (FEReact), connected the backend with the frontend part and attempted to create a view using React. </p>
-
+In the frontend with React (FEReact), connected the backend with the frontend part and attempted to create a view using React. 
+React project is located in the folder my-react-app.</p>
+```
+localhost:3000/ - get all rate cards with mid values
+localhost:3000/details - get rate card by shortname with all details 
+```\\
 ### License
 <p>This project is licensed under the MIT License - see the LICENSE.md file for details.</p>
 
