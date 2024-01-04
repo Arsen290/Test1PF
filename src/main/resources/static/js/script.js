@@ -1,3 +1,7 @@
+//func after reload page
+window.onload = function () {
+    getAllCurrencyExchangeRates();
+};
 async function getAllCurrencyExchangeRates(){
     // Get the element from DIV
     const exchengeRatesElement = document.getElementById('exchangeRates');
@@ -30,4 +34,4 @@ async function getAllCurrencyExchangeRates(){
     }
 }
 
-getAllCurrencyExchangeRates()
+

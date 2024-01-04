@@ -1,9 +1,9 @@
-// Find the element by its ID
-var myElement = document.getElementById('detailsRate');
-// Get the value of the attribute
-var shortnameValue = myElement.getAttribute('value');
-//Control value
-console.log("Value attr th:value:",shortnameValue);
+// Event listener for form submission
+document.getElementById('shortnameForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+    const shortNameInput = document.getElementById('shortNameInput').value;
+    getDetailRate(shortNameInput);
+});
 
 async function getDetailRate(shortName){
     // Get the element from DIV
