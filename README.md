@@ -1,6 +1,6 @@
-# test project from 1PF
+# Test project from 1PF
 
-This Java REST API application is designed to download data in JSON format from the web API České spořitelně, process it or store it in a Postgresql database. The data can get from web API or our database,it depends on boolean parameter. The application populates 1 database tables: 'rate_cards' , where stores information of rate card. The application is written in Java using the Spring Boot framework by pattern REST API.
+This Java REST API application is designed to download data in JSON format from the web API České spořitelně, process it or store it in a Postgresql database. The data can get from web API or our database,it depends on boolean parameter. The application populates one database table: 'rate_cards' , where stores information of rate card. The application is written in Java using the Spring Boot framework by pattern REST API.
 ## Installation
 
 To run this application, you'll need to follow these steps:
