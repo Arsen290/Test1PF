@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
-@CrossOrigin(origins = "http://localhost:63342")
+@CrossOrigin(origins = "http://localhost:63342")// Allowing requests only from this domain Same-Origin Policy (SOP)
 public class RestAPIController {
 
     @Autowired
