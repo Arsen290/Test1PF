@@ -38,16 +38,16 @@ npm run build
 ```
 After running this command, you will find the compiled files in the build directory.
 
-Open the directory
+Open the directory:
 ```
 cd Test1PF 
 ```
 
-Mvn install
+Mvn install:
 ```
 mvn clean install 
 ```
-Install Node.js if not already installed.
+Install Node.js if not already installed.<br>
 Ensure Maven is installed.
 
 ### Step 3: Set Up the Database
