@@ -18,7 +18,7 @@ public class RateCard {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "short_name")
+    @Column(unique = true, name = "short_name")
     private String shortName;
 
     @Column(name = "valid_from")
