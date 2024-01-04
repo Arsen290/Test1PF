@@ -1,5 +1,6 @@
 // Event listener for form submission
 document.getElementById('shortnameForm').addEventListener('submit', function (event) {
+    // Prevent the default form submission behavior, which would cause a page reload
     event.preventDefault();
     const shortNameInput = document.getElementById('shortNameInput').value;
     getDetailRate(shortNameInput);
