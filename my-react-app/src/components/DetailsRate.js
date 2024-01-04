@@ -9,6 +9,7 @@ const Details = () => {
 
     // Function to handle form submission
     const handleFormSubmit = async (event) => {
+        // Prevent default form submission behavior
         event.preventDefault();
         await getDetailRate(shortNameInput);
     };
