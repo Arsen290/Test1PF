@@ -4,6 +4,7 @@
 import React, { useEffect, useState } from 'react';
 
 const ExchangeRates = () => {
+    // Define a state variable to hold exchange rates data , after useState reset the state variable with the new data.
     const [exchangeRates, setExchangeRates] = useState([]);
     //useEffect hook takes a callback function as an argument.
     useEffect(() => {
@@ -14,6 +15,7 @@ const ExchangeRates = () => {
         const apiUrl = 'http://localhost:8080/api/v1/ratecards?useDb=true';
 
         try {
+            //fetch() method to fetch the data from the API endpoint.
             const response = await fetch(apiUrl);
             const data = await response.json();
             setExchangeRates(data);
