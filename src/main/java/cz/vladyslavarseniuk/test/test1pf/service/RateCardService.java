@@ -31,8 +31,33 @@ public class RateCardService {
             List<RateCard> rateCards = Arrays.stream(responseEntity.getBody())//get body from response in JSON format and convert to stream of objects
                     .map(this::convertDtoToEntity)//convert each object to entity
                     .collect(Collectors.toList());//collect all objects to list
-            //method for saving from Spring Data JPA
-            rateCardRepository.saveAll(rateCards);
+
+            //*Optional if we don't currency rate in db
+            // Loop object to find the same shortName and update it
+            for (RateCard rateCard : rateCards) {
+                RateCard existingRateCard = rateCardRepository.findByShortName(rateCard.getShortName());
+                if (existingRateCard != null) {
+                    // if exist the same rateCard in DB, update it
+                    existingRateCard.setValidFrom(rateCard.getValidFrom());
+                    existingRateCard.setName(rateCard.getName());
+                    existingRateCard.setCountry(rateCard.getCountry());
+                    existingRateCard.setMove(rateCard.getMove());
+                    existingRateCard.setAmount(rateCard.getAmount());
+                    existingRateCard.setValBuy(rateCard.getValBuy());
+                    existingRateCard.setValSell(rateCard.getValSell());
+                    existingRateCard.setValMid(rateCard.getValMid());
+                    existingRateCard.setCurrBuy(rateCard.getCurrBuy());
+                    existingRateCard.setCurrSell(rateCard.getCurrSell());
+                    existingRateCard.setCurrMid(rateCard.getCurrMid());
+                    existingRateCard.setVersion(rateCard.getVersion());
+                    existingRateCard.setCnbMid(rateCard.getCnbMid());
+                    existingRateCard.setEcbMid(rateCard.getEcbMid());
+                    rateCardRepository.save(existingRateCard);
+                } else {
+                    // if not exist,save new object
+                    rateCardRepository.save(rateCard);
+                }
+            }
 
             return rateCards;
         }
