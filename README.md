@@ -98,7 +98,7 @@ React project is located in the folder my-react-app.</p>
 ```
 localhost:3000/ - get all rate cards with mid values
 localhost:3000/details - get rate card by shortname with all details 
-```\\
+```
 ### License
 <p>This project is licensed under the MIT License - see the LICENSE.md file for details.</p>
 
